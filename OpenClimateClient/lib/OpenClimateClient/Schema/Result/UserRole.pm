@@ -26,11 +26,13 @@ extends 'DBIx::Class::Core';
 
 =item * L<DBIx::Class::TimeStamp>
 
+=item * L<DBIx::Class::PassphraseColumn>
+
 =back
 
 =cut
 
-__PACKAGE__->load_components("InflateColumn::DateTime", "TimeStamp");
+__PACKAGE__->load_components("InflateColumn::DateTime", "TimeStamp", "PassphraseColumn");
 
 =head1 TABLE: C<user_role>
 
@@ -108,8 +110,8 @@ __PACKAGE__->belongs_to(
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07037 @ 2013-11-15 20:31:58
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:PBziNoZEmJ5JilYcWWjkiA
+# Created by DBIx::Class::Schema::Loader v0.07037 @ 2013-11-15 21:38:47
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:1LYayMAj/KXdio3hoKPe1g
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
