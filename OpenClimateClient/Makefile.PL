@@ -29,6 +29,9 @@ requires 'Catalyst::Plugin::StatusMessage';
 requires 'Catalyst::Plugin::StackTrace';
 requires 'Catalyst::Authentication::Realm::SimpleDB';
 requires 'Catalyst::View::TT';
+requires 'HTML::FormFu';
+requires 'Catalyst::Controller::HTML::FormFu';
+requires 'HTML::FormFu::Model::DBIC';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

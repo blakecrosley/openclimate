@@ -36,6 +36,7 @@
             "Authen::Passphrase::BlowfishCrypt" : "0",
             "Catalyst::Action::RenderView" : "0",
             "Catalyst::Authentication::Realm::SimpleDB" : "0",
+            "Catalyst::Controller::HTML::FormFu" : "0",
             "Catalyst::Plugin::Authentication" : "0",
             "Catalyst::Plugin::Authorization::Roles" : "0",
             "Catalyst::Plugin::ConfigLoader" : "0",
@@ -50,6 +51,8 @@
             "Config::General" : "0",
             "DBIx::Class::PassphraseColumn" : "0",
             "DBIx::Class::TimeStamp" : "0",
+            "HTML::FormFu" : "0",
+            "HTML::FormFu::Model::DBIC" : "0",
             "Moose" : "0",
             "namespace::autoclean" : "0"
          }
