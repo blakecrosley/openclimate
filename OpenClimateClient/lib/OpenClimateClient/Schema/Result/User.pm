@@ -162,13 +162,10 @@ sub insert {
   return $schema->txn_do(sub {
 
     $self->SUPER::insert(@args);
+    $self->discard_changes();
 
     my $role = $schema->resultset('Role')->single({ role => 'admin' });
-    
-    warn $role->id;
-    
-    warn $role;
-    $self->create_related('roles',{ role_id => $role->id });
+    $schema->resultset('UserRole')->create({ role_id => $role->id, user_id => $self->id });
   
     return $self;
   });
