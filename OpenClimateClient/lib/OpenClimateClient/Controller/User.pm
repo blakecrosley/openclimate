@@ -32,7 +32,7 @@ sub index :Path :Args(0) {
 sub create :Local :FormConfig('user/create.yml') :Args(0) {
   my ( $self, $c ) = @_;
   my $form = $c->stash->{form};
-  
+    
   if ($form->submitted_and_valid){
     my $parameters = $form->params;
     delete $parameters->{submit};
@@ -43,10 +43,13 @@ sub create :Local :FormConfig('user/create.yml') :Args(0) {
       $c->authenticate({ username => $user->username, password => $parameters->{password} });      
     } catch {
       $error = $_;
-      $c->set_error_msg("Unable to create user: $error");
+      $c->session({ error_message => "Unable to create user: $error" });
     };
-  
-    $c->res->redirect($c->uri_for($self->action_for('index'))) unless $error;
+
+    unless ($error) {
+      $c->res->redirect($c->uri_for($self->action_for('index'))) unless $error;
+      $c->session({ status_msg => "Login Success" });    
+    }
   }
   
   $c->stash({

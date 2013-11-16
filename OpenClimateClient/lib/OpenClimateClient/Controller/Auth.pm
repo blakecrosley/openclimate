@@ -40,18 +40,18 @@ sub login :Global :FormConfig('login.yml') :Args(0) {
     if ($c->authenticate({ username => $username, password => $password } )) {
         # If successful, then let them use the application
       $c->log->info("Login success");
+      $c->session({ status_msg => "Login Success" });
       $c->response->redirect($c->uri_for_action('/index'));
       return;
     } else {
       # Set an error message
       $c->log->info("Login failure");
-
-      $c->set_error_msg("Bad username or password.");
+      $c->session({ error_msg => "Bad username or password." });
     }
   } else {
     # Set an error message
     $c->log->info("Empty username or password.");
-    $c->set_error_msg("Empty username or password.") unless ($c->user_exists);
+    $c->session({ error_mg => "Empty username or password." }) unless $c->user_exists;
   }
  
   # If either of above don't work out, send to the login page
