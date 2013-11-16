@@ -42,10 +42,10 @@
       </div>
       <div class="navbar-collapse bs-navbar-collapse collapse" id="oc-collapse">
         <ul class="nav navbar-nav">
-          <li [% IF c.request.path == '' -%] class="active"[% END -%]><a href="/">Home</a></li>
-          [% IF c.user_exists() %]<li [% IF c.request.path == 'console' -%] class="active"[% END -%]><a href="/console">Console</a></li>[% END -%]
-          <li [% IF c.request.path == 'user/create' -%] class="active"[% END -%]>[% IF !c.user_exists() %]<a href="/user/create">Create Account</a>[% ELSE %][% END %]</li>
-          <li [% IF c.request.path == 'signin' -%] class="active"[% END -%]>[% IF c.user_exists() %]<a href="/signout">Sign Out</a>[% ELSE %]<a href="/signin">Sign In</a>[% END %]</li>
+          <li [% IF c.request.path == '' -%] class="active"[% END -%]><a href="/"><i class="fa fa-home white font18"></i>&nbsp; Home</a></li>
+          [% IF c.user_exists() %]<li [% IF c.request.path == 'console' -%] class="active"[% END -%]><a href="/console"><i class="fa fa-tachometer white font18"></i>&nbsp; Dashboard</a></li>[% END -%]
+          <li [% IF c.request.path == 'user/create' -%] class="active"[% END -%]>[% IF !c.user_exists() %]<a href="/user/create"><i class="fa fa-smile-o white font18"></i>&nbsp; Create Account</a>[% ELSE %][% END %]</li>
+          <li [% IF c.request.path == 'signin' -%] class="active"[% END -%]>[% IF c.user_exists() %]<a href="/signout"><i class="fa fa-sign-out white font18"></i>&nbsp; Sign Out</a>[% ELSE %]<a href="/signin"><i class="fa fa-sign-in white font18"></i>&nbsp; Sign In</a>[% END %]</li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
