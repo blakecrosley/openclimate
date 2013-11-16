@@ -4,7 +4,7 @@
       "Maxwell Cabral"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Install version 1.06, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.132830",
    "license" : [
       "perl_5"
    ],
@@ -15,8 +15,8 @@
    "name" : "OpenClimateClient",
    "no_index" : {
       "directory" : [
-         "inc",
-         "t"
+         "t",
+         "inc"
       ]
    },
    "prereqs" : {
@@ -28,7 +28,7 @@
       },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.36"
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "runtime" : {
@@ -37,6 +37,7 @@
             "Catalyst::Action::RenderView" : "0",
             "Catalyst::Authentication::Realm::SimpleDB" : "0",
             "Catalyst::Controller::HTML::FormFu" : "0",
+            "Catalyst::Controller::REST" : "0",
             "Catalyst::Plugin::Authentication" : "0",
             "Catalyst::Plugin::Authorization::Roles" : "0",
             "Catalyst::Plugin::ConfigLoader" : "0",
@@ -61,10 +62,5 @@
       }
    },
    "release_status" : "stable",
-   "resources" : {
-      "license" : [
-         "http://dev.perl.org/licenses/"
-      ]
-   },
    "version" : "0.01"
 }
