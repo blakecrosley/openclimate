@@ -1,0 +1,7 @@
+To install the dependencies:
+perl Makefile.PL && make
+
+To update the schema from the root of the Perl project
+
+./script/openclimateclient_create.pl model DB DBIC::Schema OpenClimateClient::Schema create=static components=TimeStamp dbi:SQLite:./lib/OpenClimateClient/Model/OpenClimate.db on_connect_do="PRAGMA foreign_keys = ON"
+
