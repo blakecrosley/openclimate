@@ -24,6 +24,7 @@ requires 'Catalyst::Plugin::Session::Store::File';
 requires 'Catalyst::Plugin::Session::State::Cookie';
 requires 'Catalyst::Plugin::StackTrace';
 requires 'Catalyst::Authentication::Realm::SimpleDB';
+requires 'Catalyst::View::TT';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
