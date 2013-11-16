@@ -152,6 +152,25 @@ __PACKAGE__->add_columns(
     },
 );
 
+__PACKAGE__->resultset_class('OpenClimateClient::Schema::ResultSet::User');
+
+sub insert {
+  my $self = shift;
+  my @args = @_;
+  my $schema = $self->result_source->schema;
+  
+  return $schema->txn_do(sub {
+
+    $self->SUPER::insert(@args);
+    $self->discard_changes();
+
+    my $role = $schema->resultset('Role')->single({ role => 'admin' });
+    $schema->resultset('UserRole')->create({ role_id => $role->id, user_id => $self->id });
+  
+    return $self;
+  });
+}
+
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;
 1;

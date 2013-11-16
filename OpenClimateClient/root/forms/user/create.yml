@@ -1,6 +1,28 @@
 indicator: submit
 
 elements:
+
+  - type: Text
+    name: first_name
+    id: first_name
+    label: First Name
+    constraints:
+      - Required
+
+  - type: Text
+    name: last_name
+    id: last_name
+    label: Last Name
+    constraints:
+      - Required
+
+  - type: Text
+    name: email_address
+    id: email_address
+    label: Email Address
+    constraints:
+      - Required
+
   - type: Text
     name: username
     id: username
@@ -14,7 +36,6 @@ elements:
     label: Password
     constraints:
       - Required
-
 
   - type: Submit
     name: submit

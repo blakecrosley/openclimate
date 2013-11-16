@@ -61,6 +61,9 @@ __PACKAGE__->config(
             __PACKAGE__->path_to( 'root', 'template' ),
         ],
     },
+   'Controller::HTML::FormFu' => {
+      request_token_enable => 1,
+   }
 );
 
 # Start the application
