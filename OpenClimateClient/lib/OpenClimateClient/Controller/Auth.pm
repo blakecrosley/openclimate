@@ -23,7 +23,7 @@ Catalyst Controller.
 
 use Data::Dumper;
 
-sub login :Global :FormConfig('login.yml') :Args(0) {
+sub signin :Global :FormConfig('login.yml') :Args(0) {
   my ($self, $c) = @_;
   my $form = $c->stash->{form};
  
@@ -60,7 +60,7 @@ sub login :Global :FormConfig('login.yml') :Args(0) {
   });
 }
 
-sub logout :Global :Args(0) {
+sub signout :Global :Args(0) {
     my ($self, $c) = @_;
  
     # Clear the user's state
