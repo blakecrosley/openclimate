@@ -45,19 +45,26 @@ body {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
-.pier {
-background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(top,  #ffffff 26%, #d1fff8 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(26%,#ffffff), color-stop(100%,#d1fff8)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #ffffff 26%,#d1fff8 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #ffffff 26%,#d1fff8 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #ffffff 26%,#d1fff8 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #ffffff 26%,#d1fff8 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d1fff8',GradientType=0 ); /* IE6-9 */
-
+.purpleBackground {
+	background: #C644FC; /* Old browsers */
 	background-size: 100%;
 	width: 100%;
-	border-bottom: 5px solid #428bca;
+}
+.yellowBackground {
+	background: #FFDB4C; /* Old browsers */
+	background-size: 100%;
+	width: 100%;
+}
+
+.blueBackground {
+	background: #52edc7; /* Old browsers */
+	background-size: 100%;
+	width: 100%;
+}
+.orangeBackground {
+	background: #ff5e3a; /* Old browsers */
+	background-size: 100%;
+	width: 100%;
 }
 .white {
 	color: white;
