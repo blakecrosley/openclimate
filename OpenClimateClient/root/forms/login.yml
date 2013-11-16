@@ -1,26 +1,35 @@
 indicator: submit
 method: POST
+attributes:
+  class: form-horizontal
+  role: form
 
 elements:
   - type: Text
     name: username
     id: username
-    label: Username
     constraints:
       - Required
+    attributes:
+      placeholder: Username
+      class: mb10
 
   - type: Password
     name: password
     id: password
-    label: Password
     constraints:
       - Required
+    attributes:
+      placeholder: Password
+      class: mb10
 
 
   - type: Submit
     name: submit
     id: submit
-    value: Submit
+    value: Sign In
+    attributes:
+      class: btn btn-oc
 
 # Global filters and constraints.
 constraints:
@@ -33,3 +42,5 @@ filter:
     - TrimEdges
     # Escape HTML characters for safety
     - HTMLEscape
+
+
