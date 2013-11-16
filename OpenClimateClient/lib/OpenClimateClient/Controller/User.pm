@@ -16,6 +16,14 @@ Catalyst Controller.
 
 =cut
 
+=head2 index
+
+=cut
+
+sub index :Path :Args(0) {
+  my ($self, $c) = @_;
+  $c->res->redirect($c->uri_for_action('/index'));
+}
 
 =head2 create
 
@@ -23,6 +31,16 @@ Catalyst Controller.
 
 sub create :Local :FormConfig('user/create.yml') :Args(0) {
   my ( $self, $c ) = @_;
+  my $form = $c->stash->{form};
+  
+  if ($form->submitted_and_valid){
+    my $parameters = $c->req->parameters;
+    delete $parameters->{submit};
+    
+    $c->model('DB::User')->validate_and_create($parameters);
+  
+    $c->res->redirect($c->uri_for($self->action_for('index')));  
+  }
   
   $c->stash({
     template => 'user/create.html',
