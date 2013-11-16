@@ -49,7 +49,7 @@ Console page
 
 =cut
 
-sub console :Path :Args(0) {
+sub console :Local {
   my ( $self, $c ) = @_;
 
   $c->stash({
