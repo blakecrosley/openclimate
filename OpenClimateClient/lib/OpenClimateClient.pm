@@ -21,10 +21,13 @@ use Catalyst qw/
     StackTrace
  
     Authentication
- 
+    Authorization::Roles
+    
     Session
     Session::Store::File
     Session::State::Cookie
+    
+    StatusMessage
 /;
 
 extends 'Catalyst';
