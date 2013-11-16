@@ -26,7 +26,9 @@ use Data::Dumper;
 sub signin :Global :FormConfig('login.yml') :Args(0) {
   my ($self, $c) = @_;
   my $form = $c->stash->{form};
- 
+
+  $c->res->redirect($c->uri_for_action('/index')) if $c->user_exists();
+
   # If the username and password values were found in form
   if ($form->submitted_and_valid()) {
 
@@ -53,7 +55,7 @@ sub signin :Global :FormConfig('login.yml') :Args(0) {
     $c->log->info("Empty username or password.");
     $c->session({ error_mg => "Empty username or password." }) unless $c->user_exists;
   }
- 
+
   # If either of above don't work out, send to the login page
   $c->stash({
     template => 'login.html'
@@ -62,10 +64,10 @@ sub signin :Global :FormConfig('login.yml') :Args(0) {
 
 sub signout :Global :Args(0) {
     my ($self, $c) = @_;
- 
+
     # Clear the user's state
     $c->logout;
- 
+
     # Send the user to the starting point
     $c->response->redirect($c->uri_for('/'));
 }
