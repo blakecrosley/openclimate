@@ -22,6 +22,7 @@ requires 'Catalyst::Plugin::Authentication';
 requires 'Catalyst::Plugin::Session';
 requires 'Catalyst::Plugin::Session::Store::File';
 requires 'Catalyst::Plugin::Session::State::Cookie';
+requires 'Catalyst::Plugin::StackTrace';
 test_requires 'Test::More' => '0.88';
 catalyst;
 
