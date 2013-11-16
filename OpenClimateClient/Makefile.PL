@@ -32,6 +32,7 @@ requires 'Catalyst::View::TT';
 requires 'HTML::FormFu';
 requires 'Catalyst::Controller::HTML::FormFu';
 requires 'HTML::FormFu::Model::DBIC';
+requires 'Try::Tiny';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

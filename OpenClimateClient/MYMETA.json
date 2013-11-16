@@ -54,6 +54,7 @@
             "HTML::FormFu" : "0",
             "HTML::FormFu::Model::DBIC" : "0",
             "Moose" : "0",
+            "Try::Tiny" : "0",
             "namespace::autoclean" : "0"
          }
       }
