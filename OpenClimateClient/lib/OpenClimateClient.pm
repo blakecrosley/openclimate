@@ -47,10 +47,23 @@ __PACKAGE__->config(
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,
     enable_catalyst_header => 1, # Send X-Catalyst header
+    'Plugin::Authentication' => {
+        default => {
+            class           => 'SimpleDB',
+            user_model      => 'DB::User',
+            password_type   => 'clear',
+        },
+    },
+    'View::HTML' => {
+        #Set the location for TT files
+        INCLUDE_PATH => [
+            __PACKAGE__->path_to( 'root', 'template' ),
+        ],
+    },
 );
 
 # Start the application
-__PACKAGE__->setup();
+__PACKAGE__->setup(ConfigLoader Static::Simple);
 
 =encoding utf8
 
