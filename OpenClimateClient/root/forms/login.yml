@@ -1,0 +1,34 @@
+indicator: submit
+
+elements:
+  - type: Text
+    name: username
+    id: username
+    label: Username
+    constraints:
+      - Required
+
+  - type: Text
+    name: password
+    id: password
+    label: Password
+    constraints:
+      - Required
+
+
+  - type: Submit
+    name: submit
+    id: submit
+    value: Submit
+
+# Global filters and constraints.
+constraints:
+    # The user cannot leave any fields blank
+    - Required
+    # If not all fields are required, move the Required constraint to the
+    # fields that are
+filter:
+    # Remove whitespace at both ends
+    - TrimEdges
+    # Escape HTML characters for safety
+    - HTMLEscape

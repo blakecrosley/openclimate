@@ -2,7 +2,7 @@ package OpenClimateClient::Controller::Auth;
 use Moose;
 use namespace::autoclean;
 
-BEGIN { extends 'Catalyst::Controller'; }
+BEGIN { extends 'Catalyst::Controller::HTML::FormFu'; }
 
 =head1 NAME
 
@@ -21,15 +21,16 @@ Catalyst Controller.
 
 =cut
 
-sub login :Global :Args(0) {
+sub login :Global :FormConfig('login.yml') :Args(0) {
     my ($self, $c) = @_;
+    my $form = $c->stash->{form};
  
     # Get the username and password from form
     my $username = $c->request->params->{username};
     my $password = $c->request->params->{password};
  
     # If the username and password values were found in form
-    if ($username && $password) {
+    if ($form->submitted_and_valid()) {
         # Attempt to log the user in
         if ($c->authenticate({ username => $username,
                                password => $password  } )) {
@@ -48,7 +49,9 @@ sub login :Global :Args(0) {
     }
  
     # If either of above don't work out, send to the login page
-    $c->stash(template => 'login.tt2');
+    $c->stash({
+      template => 'login.html'
+    });
 }
 
 sub logout :Global :Args(0) {
