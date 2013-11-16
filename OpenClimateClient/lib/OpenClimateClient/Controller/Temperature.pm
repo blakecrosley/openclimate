@@ -1,6 +1,9 @@
 package OpenClimateClient::Controller::Temperature;
-use Moose;
+
 use namespace::autoclean;
+
+use Moose;
+use Try::Tiny;
 
 BEGIN { extends 'Catalyst::Controller::REST'; }
 
@@ -12,23 +15,45 @@ OpenClimateClient::Controller::Temperature - Catalyst Controller
 
 Catalyst Controller.
 
+=head1 BEGIN
+
+=cut
+
 =head1 METHODS
 
 =cut
 
-sub save_temperature : Path('save') : Args(0) : ActionClass('REST') { }
+sub save : Path('save') : Args(0) : ActionClass('REST') { }
 
-
-=head2 index
+=head2 save_temperature
 
 =cut
 
-sub index :Path :Args(0) {
-    my ( $self, $c ) = @_;
+sub save_POST {
+  my ( $self, $c ) = @_;
 
-    $c->response->body('Matched OpenClimateClient::Controller::Temperature in Temperature.');
+  my $temperature = $c->request->param('temperature');
+
+  try {
+    $c->model('DB::Temperature')->create({
+      temperature => $temperature
+    });
+
+    $self->status_created(
+      $c,
+      entity => {
+        message => "Temperature saved."
+      }
+    );
+  } catch {
+    $c->log->info("Could not save this point, error: $_");
+
+    $self->status_bad_request(
+      $c,
+      message => "Could not save this temperature."
+    );
+  }
 }
-
 
 
 =encoding utf8
