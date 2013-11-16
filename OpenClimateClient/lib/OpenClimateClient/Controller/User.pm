@@ -1,6 +1,9 @@
 package OpenClimateClient::Controller::User;
-use Moose;
+
 use namespace::autoclean;
+
+use Moose;
+use Try::Tiny;
 
 BEGIN { extends 'Catalyst::Controller::HTML::FormFu'; }
 
