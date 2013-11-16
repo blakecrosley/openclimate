@@ -8,32 +8,33 @@ elements:
   - type: Block
     attributes:
       class: form-group
-
     elements:
-    - type: Text
-      name: username
-      id: username
-      constraints:
-        - Required
+    - type: Block
       attributes:
-        placeholder: Username
-        class: mb15 form-control
-
-    - type: Password
-      name: password
-      id: password
-      constraints:
-        - Required
+        class: mb15
+      elements:
+      - type: Text
+        name: username
+        id: username
+        attributes:
+          placeholder: Username
+          class: mb0 form-control
+    - type: Block
       attributes:
-        placeholder: Password
-        class: mb30 form-control
-
+        class: mb30
+      elements:
+      - type: Password
+        name: password
+        id: password
+        attributes:
+          placeholder: Password
+          class: mb0 form-control
     - type: Submit
       name: submit
       id: submit
       value: Sign In
       attributes:
-        class: btn btn-oc
+        class: btn btn-oc btn-lg
 
 # Global filters and constraints.
 constraints:

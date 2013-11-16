@@ -35,7 +35,17 @@ body {
 	color: #390;
 }
 .error {
-	color: #f00;
+background-color: #ffc3d4;
+border-color: #ffa9d1;
+color: #ff2a68;
+padding: 6px 6px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+border-radius: 4px;
+}
+.error_message {
+	display: inline-block;
+	padding-bottom: 10px;
 }
 
 body {
@@ -74,8 +84,8 @@ html {
 .btn-oc:active,
 .btn-oc.active {
   background-color: rgba(0,0,0,0) !important;
-  border-color: #fff;
-  color: #fff;
+  border-color: #30ffce;
+  color: #30ffce;  
 }
 .btn-oc.disabled:hover,
 .btn-oc.disabled:focus,
@@ -92,6 +102,15 @@ fieldset[disabled] .btn-oc.active {
   background-color: rgba(0,0,0,0) !important;
   border-color: #ccc;
   color: #ccc;
+}
+.btn.btn-oc:active,
+.btn.btn-oc.active {
+  outline: 0;
+  background-image: none;
+  border-color: #fff;
+  color: #fff;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.0);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.0);
 }
 
 .btn-oc-white {
