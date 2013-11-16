@@ -22,6 +22,10 @@ OpenClimateClient::Controller::Root - Root Controller for OpenClimateClient
 
 =head1 METHODS
 
+sub begin {
+  my ($self,$c) = @_;
+}
+
 =head2 index
 
 The root page (/)
