@@ -52,6 +52,8 @@ Console page
 sub console :Local {
   my ( $self, $c ) = @_;
 
+  $c->res->redirect('/signin') if !$c->user_exists();
+
   $c->stash({
     template  => 'console.html'
   });
