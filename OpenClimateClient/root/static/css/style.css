@@ -37,7 +37,8 @@ body {
 .error {
 	color: #f00;
 }
-body {
+
+#something.body {
 background: #30ffce; /* Old browsers */
 background: -moz-linear-gradient(top,  #30ffce 0%, #4ccfff 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#30ffce), color-stop(100%,#4ccfff)); /* Chrome,Safari4+ */
@@ -60,16 +61,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30ffce', end
 }
 
 .btn-oc {
-  background-color: none;
-  border-color: #30FFCE;
+  background-color: rgba(0,0,0,0) !important;
+  border-color: #007aff;
   border-width: 2px;
-  color: #30FFCE;
+  color: #007aff;
 }
 .btn-oc:hover,
 .btn-oc:focus,
 .btn-oc:active,
 .btn-oc.active {
-  background-color: none;
+  background-color: rgba(0,0,0,0) !important;
   border-color: #fff;
   color: #fff;
 }
@@ -85,9 +86,9 @@ fieldset[disabled] .btn-oc:hover,
 fieldset[disabled] .btn-oc:focus,
 fieldset[disabled] .btn-oc:active,
 fieldset[disabled] .btn-oc.active {
-  background-color: none;
-  border-color: #219076;
-  color: #219076;
+  background-color: rgba(0,0,0,0) !important;
+  border-color: #ccc;
+  color: #ccc;
 }
 
 .btn-oc-white {
