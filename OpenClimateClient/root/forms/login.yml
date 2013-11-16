@@ -26,7 +26,7 @@ elements:
         - Required
       attributes:
         placeholder: Password
-        class: mb20 form-control
+        class: mb30 form-control
 
     - type: Submit
       name: submit

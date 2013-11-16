@@ -46,7 +46,10 @@ background: -webkit-linear-gradient(top,  #30ffce 0%,#4ccfff 100%); /* Chrome10+
 background: -o-linear-gradient(top,  #30ffce 0%,#4ccfff 100%); /* Opera 11.10+ */
 background: -ms-linear-gradient(top,  #30ffce 0%,#4ccfff 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #30ffce 0%,#4ccfff 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30ffce', endColorstr='#4ccfff',GradientType=0 ); /* IE6-9 */
+min-height: 400px;
+}
+html {
+	background: #4ccfff;
 }
 .whiteAlpha {
   background: rgba(255,255,255,.3);
