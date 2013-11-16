@@ -34,6 +34,7 @@ requires 'Catalyst::Controller::HTML::FormFu';
 requires 'HTML::FormFu::Model::DBIC';
 requires 'Try::Tiny';
 requires 'FindBin::Bin';
+requires 'Catalyst::Controller::REST';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

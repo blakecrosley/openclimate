@@ -2,7 +2,7 @@ package OpenClimateClient::Controller::Temperature;
 use Moose;
 use namespace::autoclean;
 
-BEGIN { extends 'Catalyst::Controller'; }
+BEGIN { extends 'Catalyst::Controller::REST'; }
 
 =head1 NAME
 
@@ -15,6 +15,8 @@ Catalyst Controller.
 =head1 METHODS
 
 =cut
+
+sub save_temperature : Path('save') : Args(0) : ActionClass('REST') { }
 
 
 =head2 index
