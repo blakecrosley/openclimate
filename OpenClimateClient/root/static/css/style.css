@@ -45,8 +45,16 @@ body {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
-.purpleBackground {
-	background: #C644FC; /* Old browsers */
+.hero-unit {
+background: #30ffce; /* Old browsers */
+background: -moz-linear-gradient(top,  #30ffce 0%, #4ccfff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#30ffce), color-stop(100%,#4ccfff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #30ffce 0%,#4ccfff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #30ffce 0%,#4ccfff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #30ffce 0%,#4ccfff 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #30ffce 0%,#4ccfff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30ffce', endColorstr='#4ccfff',GradientType=0 ); /* IE6-9 */
+
 	background-size: 100%;
 	width: 100%;
 }
