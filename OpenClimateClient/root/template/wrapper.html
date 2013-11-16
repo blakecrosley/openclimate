@@ -1,15 +1,58 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="content-type" content="text/html">
-  <title>[% template.title or "My Catalyst App!" %]</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static/css/OpenClimateClient.css" />
-  <link rel="stylesheet" href="static/css/bootstrap.css" />
-  <script type="text/javascript" href="static/js/bootstrap.js"></script>
-</head>
+<html lang="en"><head>
+[% ############## Meta Information ############## -%]
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+[% ############## END Meta Information ############## -%]
+[% ############## Title / Favicon ############## -%]
+<link rel="shortcut icon" href="favicon.png">
+<title>[% template.title or "My Catalyst App!" %]</title>
+[% ############## END Title / Favicon ############## -%]
+[% ############## CSS ############## -%]
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic,300italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="static/css/bootstrap.css" />
+<link rel="stylesheet" href="static/css/style.css" />
+<link rel="stylesheet" href="static/css/short.css" />
+[% ############## END CSS ############## -%]
+[% ############## IE ############## -%]
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+[% ############## END IE ############## -%]
 <body>
-  [% template.title or siste.title %]
-  [% content %]
+[% ############## Navbar ############## -%]
+	<div class="navbar navbar-inverse navbar-fixed-top full-screen" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">OpenClimate</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">Sign In</a></li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
+[% ############## END Navbar ############## -%]
+[% ############## Main Content ############## -%]
+		[% content %]
+[% ############## END Main Content ############## -%]
+[% ############## Javascript ############## -%]
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" href="static/js/bootstrap.js"></script>
+[% ############## END Javascript ############## -%]
 </body>
 </html>
