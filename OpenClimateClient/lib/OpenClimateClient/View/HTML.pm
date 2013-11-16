@@ -8,7 +8,7 @@ __PACKAGE__->config(
     TEMPLATE_EXTENSION => '.html',
     render_die => 1,
     INCLUDE_PATH => [
-      MyApp->path_to( 'root', 'template' ),
+      OpenClimateClient->path_to( 'root', 'template' ),
     ],
     # Set to 1 for detailed timer stats in your HTML as comments
     TIMER              => 0,

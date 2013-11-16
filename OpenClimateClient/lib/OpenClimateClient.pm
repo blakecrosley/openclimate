@@ -17,8 +17,6 @@ use Catalyst::Runtime 5.80;
 #                 directory
 
 use Catalyst qw/
-    -Debug
-    ConfigLoader
     Static::Simple
     StackTrace
  
@@ -63,7 +61,7 @@ __PACKAGE__->config(
 );
 
 # Start the application
-__PACKAGE__->setup(ConfigLoader Static::Simple);
+__PACKAGE__->setup(qw/-Debug ConfigLoader Static::Simple/);
 
 =encoding utf8
 
