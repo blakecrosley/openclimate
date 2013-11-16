@@ -5,31 +5,35 @@ attributes:
   role: form
 
 elements:
-  - type: Text
-    name: username
-    id: username
-    constraints:
-      - Required
+  - type: Block
     attributes:
-      placeholder: Username
-      class: mb10
+      class: form-group
 
-  - type: Password
-    name: password
-    id: password
-    constraints:
-      - Required
-    attributes:
-      placeholder: Password
-      class: mb10
+    elements:
+    - type: Text
+      name: username
+      id: username
+      constraints:
+        - Required
+      attributes:
+        placeholder: Username
+        class: mb15 form-control
 
+    - type: Password
+      name: password
+      id: password
+      constraints:
+        - Required
+      attributes:
+        placeholder: Password
+        class: mb20 form-control
 
-  - type: Submit
-    name: submit
-    id: submit
-    value: Sign In
-    attributes:
-      class: btn btn-oc
+    - type: Submit
+      name: submit
+      id: submit
+      value: Sign In
+      attributes:
+        class: btn btn-oc
 
 # Global filters and constraints.
 constraints:
