@@ -33,6 +33,7 @@ requires 'HTML::FormFu';
 requires 'Catalyst::Controller::HTML::FormFu';
 requires 'HTML::FormFu::Model::DBIC';
 requires 'Try::Tiny';
+requires 'FindBin::Bin';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

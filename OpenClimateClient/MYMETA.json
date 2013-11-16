@@ -51,6 +51,7 @@
             "Config::General" : "0",
             "DBIx::Class::PassphraseColumn" : "0",
             "DBIx::Class::TimeStamp" : "0",
+            "FindBin::Bin" : "0",
             "HTML::FormFu" : "0",
             "HTML::FormFu::Model::DBIC" : "0",
             "Moose" : "0",
