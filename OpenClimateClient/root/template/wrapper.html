@@ -15,9 +15,9 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Cantata+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic,300italic,700italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="static/css/bootstrap.css" />
-<link rel="stylesheet" href="static/css/style.css" />
-<link rel="stylesheet" href="static/css/short.css" />
+<link rel="stylesheet" href="[% c.uri_for('/static/css/bootstrap.css') %]" />
+<link rel="stylesheet" href="[% c.uri_for('/static/css/style.css') %]" />
+<link rel="stylesheet" href="[% c.uri_for('/static/css/short.css') %]" />
 [% ############## END CSS ############## -%]
 [% ############## IE ############## -%]
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -46,7 +46,7 @@
           <li><a href="/signin">Sign In</a></li>
         </ul>
       </div><!--/.nav-collapse -->
-    </div>
+    </div
   </div>
 [% ############## END Navbar ############## -%]
 [% ############## Main Content ############## -%]
@@ -65,13 +65,9 @@
 [% ############## END Main Content ############## -%]
 [% ############## Javascript ############## -%]
   <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-<<<<<<< HEAD
   <script type="text/javascript" href="[% c.uri_for('/static/js/bootstrap.js') %]"></script>
   <script type="text/javascript" href="[% c.uri_for('/static/js/flot/flot.js') %]"></script>
   <script type="text/javascript" href="[% c.uri_for('/static/js/user.js') %]"></script>
-=======
-  <script type="text/javascript" href="static/js/bootstrap.js"></script>
->>>>>>> c4cf20f83ba407da43297d31d5a25dabc0ad1698
 [% ############## END Javascript ############## -%]
 </body>
 </html>
