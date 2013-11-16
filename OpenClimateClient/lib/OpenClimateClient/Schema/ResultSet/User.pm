@@ -13,7 +13,7 @@ sub validate_and_create {
   my @rest = @_;
   my $parameters = $rest[0];
   
-  die "no parameters\n" unless $parameters;
+  die "Missing Parameters\n" unless $parameters;
   
   my $conflict_rs = $self->search({
     -or => [
@@ -22,7 +22,7 @@ sub validate_and_create {
     ],    
   });
 
-  die "conflict\n" if 0 != $conflict_rs->count;
+  die "User already exists with the given email or username\n" if 0 != $conflict_rs->count;
   
   return $self->create(@rest);
 }

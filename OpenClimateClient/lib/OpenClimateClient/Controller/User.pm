@@ -34,12 +34,19 @@ sub create :Local :FormConfig('user/create.yml') :Args(0) {
   my $form = $c->stash->{form};
   
   if ($form->submitted_and_valid){
-    my $parameters = $c->req->parameters;
+    my $parameters = $form->params;
     delete $parameters->{submit};
     
-    $c->model('DB::User')->validate_and_create($parameters);
+    my $error;
+    try {
+      my $user = $c->model('DB::User')->validate_and_create($parameters);
+      $c->authenticate({ username => $user->username, password => $parameters->{password} });      
+    } catch {
+      $error = $_;
+      $c->set_error_msg("Unable to create user: $error");
+    };
   
-    $c->res->redirect($c->uri_for($self->action_for('index')));  
+    $c->res->redirect($c->uri_for($self->action_for('index'))) unless $error;
   }
   
   $c->stash({
