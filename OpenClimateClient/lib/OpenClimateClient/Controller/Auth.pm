@@ -21,37 +21,43 @@ Catalyst Controller.
 
 =cut
 
+use Data::Dumper;
+
 sub login :Global :FormConfig('login.yml') :Args(0) {
-    my ($self, $c) = @_;
-    my $form = $c->stash->{form};
+  my ($self, $c) = @_;
+  my $form = $c->stash->{form};
  
+  # If the username and password values were found in form
+  if ($form->submitted_and_valid()) {
+
+    $c->log->info("Auth Form Submitted and valid");
+
     # Get the username and password from form
     my $username = $form->params->{username};
     my $password = $form->params->{password};
- 
-    # If the username and password values were found in form
-    if ($form->submitted_and_valid()) {
-        # Attempt to log the user in
-        if ($c->authenticate({ username => $username, password => $password } )) {
-            # If successful, then let them use the application
-            warn "Login success";
-            $c->response->redirect($c->uri_for_action('/index'));
-            return;
-        } else {
-            # Set an error message
-            warn "Login failure";
 
-            $c->set_error_msg("Bad username or password.");
-        }
+    # Attempt to log the user in
+    if ($c->authenticate({ username => $username, password => $password } )) {
+        # If successful, then let them use the application
+      $c->log->info("Login success");
+      $c->response->redirect($c->uri_for_action('/index'));
+      return;
     } else {
-        # Set an error message
-        $c->set_error_msg("Empty username or password.") unless ($c->user_exists);
+      # Set an error message
+      $c->log->info("Login failure");
+
+      $c->set_error_msg("Bad username or password.");
     }
+  } else {
+    # Set an error message
+    $c->log->info("Empty username or password.");
+    $c->set_error_msg("Empty username or password.") unless ($c->user_exists);
+  }
  
-    # If either of above don't work out, send to the login page
-    $c->stash({
-      template => 'login.html'
-    });
+  # If either of above don't work out, send to the login page
+  $c->stash({
+    template => 'login.html'
+  });
 }
 
 sub logout :Global :Args(0) {
