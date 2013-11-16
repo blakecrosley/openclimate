@@ -1,6 +1,9 @@
 package OpenClimateClient::Controller::Root;
-use Moose;
+
 use namespace::autoclean;
+
+use Try::Tiny;
+use Moose;
 
 BEGIN { extends 'Catalyst::Controller' }
 
@@ -38,6 +41,20 @@ sub index :Path :Args(0) {
   $c->stash({
     template => 'home.html',
   })
+}
+
+=head2 console
+
+Console page
+
+=cut
+
+sub console :Local {
+  my ( $self, $c ) = @_;
+
+  $c->stash({
+    template  => 'console.html'
+  });
 }
 
 =head2 default
