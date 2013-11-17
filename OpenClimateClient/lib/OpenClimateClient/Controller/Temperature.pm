@@ -30,20 +30,15 @@ sub get : Path('get') : Args(0) :ActionClass('REST') {}
 sub get_GET {
   my ( $self, $c ) = @_;
 
-  my $now = DateTime->now( time_zone => 'America/Los_Angeles' );
-
-  my $right_now = $now->second;
+  my @temp_list = $c->model('DB::Temperature')->search({
+  },{
+    rows => 60,
+  });
 
   my @values;
 
-  my $dummy_temp = 60;
-
-  my $x = 0;
-  my $y = 0;
-
-  for ( my $count = 61; $count > 0; $count --) {
-    $x = $count;
-    push @values, [$x,65];
+  foreach my $item ( @temp_list ) {
+    push @values, [ $item->timestamp->minute, $item->temperature ]
   }
 
   $self->status_ok(
