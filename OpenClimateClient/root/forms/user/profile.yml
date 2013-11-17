@@ -65,7 +65,7 @@ elements:
 
     - type: Block
       attributes:
-        class: mb30
+        class: mb15
       elements:
       - type: Password
         name: old_password
@@ -77,7 +77,7 @@ elements:
 
     - type: Block
       attributes:
-        class: mb30
+        class: mb15
       elements:
       - type: Password
         name: password
@@ -102,7 +102,7 @@ elements:
     - type: Submit
       name: update
       id: update
-      value: Update
+      value: Update Account
       attributes:
         class: btn btn-oc btn-lg
 

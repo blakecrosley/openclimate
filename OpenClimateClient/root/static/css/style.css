@@ -49,13 +49,18 @@ html {
   border-width: 2px;
   color: #007aff;
 }
+.btn-xl {
+	padding: 18px 24px;
+	font-size: 21px;  
+}
+
 .btn-oc:hover,
 .btn-oc:focus,
 .btn-oc:active,
 .btn-oc.active {
-  background-color: rgba(0,0,0,0) !important;
-  border-color: #30ffce;
-  color: #30ffce;  
+  background-color: white !important;
+  border-color: white;
+  color: #007aff;  
 }
 .btn-oc.disabled:hover,
 .btn-oc.disabled:focus,
@@ -75,10 +80,11 @@ fieldset[disabled] .btn-oc.active {
 }
 .btn.btn-oc:active,
 .btn.btn-oc.active {
+	background: #30ffce;
   outline: 0;
   background-image: none;
   border-color: #fff;
-  color: #fff;
+  color: #30ffce;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.0);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.0);
 }
@@ -204,4 +210,10 @@ height: 1.5em;
 background-color: #f4fff2;
 border-color: #87fc70;
 color: #87fc70;
+}
+
+.btn-group-lg > .btn {
+	padding: 14px 26px;
+	font-size: 21px;
+	line-height: 1.33;
 }
