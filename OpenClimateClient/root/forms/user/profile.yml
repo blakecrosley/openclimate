@@ -19,6 +19,8 @@ elements:
         attributes:
           placeholder: First Name
           class: mb0 form-control
+        constraints:
+          - Required
 
     - type: Block
       attributes:
@@ -30,6 +32,8 @@ elements:
         attributes:
           placeholder: Last Name
           class: mb0 form-control
+        constraints:
+          - Required
 
     - type: Block
       attributes:
@@ -41,6 +45,8 @@ elements:
         attributes:
           placeholder: Email
           class: mb0 form-control
+        constraints:
+          - Required
 
     - type: Block
       attributes:
@@ -52,6 +58,8 @@ elements:
         attributes:
           placeholder: Username
           class: mb0 form-control
+        constraints:
+          - Required
 
     - type: Hr
 
@@ -99,9 +107,7 @@ elements:
         class: btn btn-oc btn-lg
 
 # Global filters and constraints.
-constraints:
     # The user cannot leave any fields blank
-    - Required
     # If not all fields are required, move the Required constraint to the
     # fields that are
 filter:
