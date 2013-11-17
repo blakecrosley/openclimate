@@ -17,15 +17,35 @@ Catalyst Controller.
 =cut
 
 
-=head2 index
+=head2 auth_required
+
+Forces the user to sign in before continuing.
+Passes the requested URI as a query param so the user can continue on their way post login
 
 =cut
 
-use Data::Dumper;
+sub auth_required : Private {
+  my ($self, $c) = @_;
+  
+  if (!$c->user){
+    $c->session({ error_msg => "You must sign in to continue" });
+    $c->res->redirect($c->uri_for_action('/auth/signin',{ next_url => $c->req->uri }));
+    $c->detach();
+  }
+}
+
+=head2 signin
+
+Provides an auth for the for user.
+Upon success, redirects the user to the value of the next_url parameter
+or their console.
+
+=cut
 
 sub signin :Global :FormConfig('login.yml') :Args(0) {
   my ($self, $c) = @_;
   my $form = $c->stash->{form};
+  my $next_uri = $c->req->parameters->{'next_url'};
 
   $c->res->redirect($c->uri_for_action('/index')) if $c->user_exists();
 
@@ -43,7 +63,7 @@ sub signin :Global :FormConfig('login.yml') :Args(0) {
         # If successful, then let them use the application
       $c->log->info("Login success");
       $c->session({ status_msg => "Login Success" });
-      $c->response->redirect($c->uri_for_action('/index'));
+      $c->response->redirect($next_uri || $c->uri_for_action('/console'));
       return;
     } else {
       # Set an error message
