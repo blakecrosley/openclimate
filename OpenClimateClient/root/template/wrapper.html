@@ -58,12 +58,12 @@
 [% IF (status_msg = c.session.status_msg) -%]
   [% c.session.delete('status_msg') -%]
 <div class="status_msg">
-  <p>[% status_msg %]</p>
+  <span class="label label-success ml20 font20">[% status_msg %]</span>
 </div>
 [% ELSIF (error_msg = c.session.error_msg) -%]
   [% c.session.delete('error_msg') -%]
 <div class="error_msg">
-  <p>[% error_msg %]</p>
+  <span class="label label-danger ml20 font20">[% error_msg %]</span>
 </div>
 [% END -%]
     [% content %]
