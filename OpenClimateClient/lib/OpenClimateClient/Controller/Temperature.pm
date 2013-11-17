@@ -48,7 +48,8 @@ sub get_GET {
   $self->status_ok(
     $c,
     entity => {
-      message => \@values,
+      label => 'Live Temperature Reading',
+      data => \@values,
     }
   );
 }

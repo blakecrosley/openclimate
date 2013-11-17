@@ -42,7 +42,7 @@ $(document).ready(function() {
 
     function onDataFetch(series) {
 
-      data = [series.message];
+      data = [series];
 
       $.plot($("#dynamicChart"), data, options);
 
