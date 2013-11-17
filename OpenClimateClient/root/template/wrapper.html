@@ -48,6 +48,7 @@
           <li [% IF c.request.path == '' -%] class="active"[% END -%]><a href="/"><i class="fa fa-home white font18"></i>&nbsp; Home</a></li>
           [% IF c.user_exists() %]<li [% IF c.request.path == 'console' -%] class="active"[% END -%]><a href="/console"><i class="fa fa-tachometer white font18"></i>&nbsp; Dashboard</a></li>[% END -%]
           <li [% IF c.request.path == 'user/create' -%] class="active"[% END -%]>[% IF !c.user_exists() %]<a href="/user/create"><i class="fa fa-smile-o white font18"></i>&nbsp; Create Account</a>[% ELSE %][% END %]</li>
+          <li [% IF c.request.path == 'user/profile' -%] class="active"[% END -%]>[% IF c.user_exists() %]<a href="/user/profile"><i class="fa fa-smile-o white font18"></i>&nbsp; Profile</a>[% ELSE %][% END %]</li>
           <li [% IF c.request.path == 'signin' -%] class="active"[% END -%]>[% IF c.user_exists() %]<a href="/signout"><i class="fa fa-sign-out white font18"></i>&nbsp; Sign Out</a>[% ELSE %]<a href="/signin"><i class="fa fa-sign-in white font18"></i>&nbsp; Sign In</a>[% END %]</li>
         </ul>
       </div><!--/.nav-collapse -->
@@ -79,6 +80,16 @@
   </div>
 [% END -%]
     [% content %]
+[% IF 1 -%]
+<div class="container">
+  <div class="row min-h200">
+    <div class="col-md-4 col-md-offset-4 pt50 mt43 pb50">
+      <img src="/static/images/big-bear.png" height="200" class="centerBlock" />
+      <p class="whiteText tCenter font80 font45Phone mb0 fw4 blueText shadow">Chill, bro.</p>
+    </div>
+  </div>
+</div>
+[% END -%]    
 [% ############## END Main Content ############## -%]
 [% ############## Javascript ############## -%]
   <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
