@@ -29,6 +29,10 @@ sub get : Path('get') : Args(0) :ActionClass('REST') {}
 sub get_GET {
   my ( $self, $c ) = @_;
 
+  for ( my $count = 0; $count < 24; $count ++) {
+
+  }
+
   my @values;
 
     my $x = int(rand(36-10) + 10);
@@ -48,7 +52,8 @@ sub get_GET {
   $self->status_ok(
     $c,
     entity => {
-      message => \@values,
+      label => 'Live Temperature Reading',
+      data => \@values,
     }
   );
 }
