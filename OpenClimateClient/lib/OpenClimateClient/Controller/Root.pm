@@ -52,7 +52,9 @@ Console page
 sub console :Local {
   my ( $self, $c ) = @_;
 
-  $c->res->redirect($c->uri_for('/signin')) if !$c->user_exists();
+  $c->forward('/auth/auth_required');
+
+#  $c->res->redirect($c->uri_for('/signin')) if !$c->user_exists();
 
   $c->stash({
     template  => 'console.html'
