@@ -98,6 +98,13 @@ sub profile :Local :FormConfig('user/profile.yml') :Args(0) {
   });
 }
 
+=head2 notifications
+
+=cut
+sub notifications :Local :Args(0) {
+  my ($self, $c) = @_;
+}
+
 
 =encoding utf8
 
