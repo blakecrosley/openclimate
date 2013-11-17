@@ -4,6 +4,7 @@
       <div class="whiteAlpha br12 p20 pt10 p5Phone min-h500">
         <div class="row mb30">
           <div class="col-md-12">
+            <h1>Manage Thermostat</h1>
             <div class="btn-group" data-toggle="buttons">
               <label class="btn btn-primary">
                 <input type="radio" name="options" id="option1"> On
@@ -15,30 +16,23 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 h300">
-            <div id="slider-vertical" class="w40" style="height: 200px;"></div>
           <div class="col-md-12">
-            <div id="slider-vertical" class="w40" style="height: 200px;"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            Temperature Slider
+          <h1>Set Temperature</h1>
+            <div id="slider-vertical" class="w40 fl" style="height: 200px;"></div>
+            <input type="text" id="amount" class="fl ml30" />
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
-            Temperature Format C/F
+            <h1>Current Temperature Reading</h1>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 fl" id="staticChart" style="width:300px;height:150px;">
-            Test
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 fr">
-            Float right (real time temperature update
+          <div class="col-md-12">
+            <h1>Temperature History</h1>
+            <div class="whiteAlpha overflowHide" style="background:#FFF;padding:20px">
+              <div class="col-md-6" id="staticChart" style="width:100%;height:350px;"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -51,8 +45,8 @@
     $( "#slider-vertical" ).slider({
       orientation: "vertical",
       range: "min",
-      min: 0,
-      max: 100,
+      min: -20,
+      max: 120,
       value: 60,
       slide: function( event, ui ) {
         $( "#amount" ).val( ui.value );
