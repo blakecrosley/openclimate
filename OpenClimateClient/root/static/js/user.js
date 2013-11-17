@@ -63,8 +63,3 @@ $(document).ready(function() {
     $.plot(staticChart, data, options);
   }
 });
-
-<<<<<<< HEAD
-=======
-var alreadyFetched = {};
->>>>>>> 376701f6a64c83c5b221ffb6d148e6f3812701d5
