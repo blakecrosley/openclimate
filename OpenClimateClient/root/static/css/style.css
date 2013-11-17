@@ -199,3 +199,9 @@ height: 1.5em;
 	letter-spacing: 1px;
 	color: #fff;
 }
+
+.alert-success {
+background-color: #f4fff2;
+border-color: #87fc70;
+color: #87fc70;
+}
