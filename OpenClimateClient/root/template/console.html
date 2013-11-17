@@ -19,12 +19,13 @@
           <div class="col-md-12">
           <h1>Set Temperature</h1>
             <div id="slider-vertical" class="w40 fl" style="height: 200px;"></div>
-            <input type="text" id="amount" class="fl ml30" />
+            <input type="text" id="amount" value="°" class="fl ml30" />
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">
             <h1>Current Temperature Reading</h1>
+            <input type="text" id="amount" value="65&deg;" class="fl ml30" />
           </div>
         </div>
         <div class="row">
@@ -48,8 +49,9 @@
       min: -20,
       max: 120,
       value: 60,
+
       slide: function( event, ui ) {
-        $( "#amount" ).val( ui.value );
+        $("#amount").val( ui.value + '°')
       }
     });
     $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
