@@ -84,7 +84,7 @@ elements:
         id: password
         attributes:
           autocomplete: off
-          placeholder: Password
+          placeholder: New Password
           class: mb0 form-control
 
     - type: Block
@@ -96,7 +96,7 @@ elements:
         id: password_confirmation
         attributes:
           autocomplete: off
-          placeholder: Password Confirmation
+          placeholder: Confirm New Password
           class: mb0 form-control
 
     - type: Submit
