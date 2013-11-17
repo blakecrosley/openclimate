@@ -24,6 +24,34 @@ Catalyst Controller.
 =cut
 
 sub save : Path('save') : Args(0) : ActionClass('REST') { }
+sub get : Path('get') : Args(0) :ActionClass('REST') {}
+
+sub get_GET {
+  my ( $self, $c ) = @_;
+
+  my @values;
+
+    my $x = int(rand(36-10) + 10);
+
+    my $y = int(rand(24-1) + 1);
+  for (my $cnt = 0; $cnt < 24; $cnt++){
+    my $x_offset = int(rand(1-4));
+    my $y_offset = int(rand(1-4));
+
+    my $is_going_down = $y_offset % 2;
+
+    $x += $x_offset;
+    $y += $is_going_down ? $y_offset : - $y_offset;
+    push @values, [$x,$y];
+  }
+
+  $self->status_ok(
+    $c,
+    entity => {
+      message => \@values,
+    }
+  );
+}
 
 =head2 save_temperature
 

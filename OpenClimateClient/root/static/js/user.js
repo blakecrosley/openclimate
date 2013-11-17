@@ -62,4 +62,29 @@ $(document).ready(function() {
     // and plot all we got
     $.plot(staticChart, data, options);
   }
+
+  fetchData();
+
+  function fetchData() {
+
+    data = []
+    alreadyFetched = {};
+
+    function onDataFetch(series) {
+
+      data = [series.message];
+
+      $.plot($("#dynamicChart"), data, options);
+
+    }
+
+    $.ajax({
+      url: '/temperature/get',
+      method: 'GET',
+      dataType: 'json',
+      success: onDataFetch
+    });
+
+    setTimeout(fetchData, 1000);
+  }
 });
