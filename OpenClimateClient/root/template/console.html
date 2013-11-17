@@ -44,7 +44,7 @@
     </div>
   </div>
 </div>
-   <script>
+<script>
   $(function() {
     $( "#slider-vertical" ).slider({
       orientation: "vertical",
@@ -61,29 +61,29 @@
   });
 
 
-$(document).ready(function() {
-  var options = {
-    lines: { show: true },
-    points: { show: true },
-    xaxis: { tickDecimals: 0, tickSize: 1 }
-  };
+  $(document).ready(function() {
+    var options = {
+      lines: { show: true },
+      points: { show: true },
+      xaxis: { tickDecimals: 0, tickSize: 1 }
+    };
 
-  var data = [];
-  var staticChart = $("#staticChart");
-  var dynamicChard = $("#dynamic-chart");
-  var alreadyFetched = {};
+    var data = [];
+    var staticChart = $("#staticChart");
+    var dynamicChard = $("#dynamic-chart");
+    var alreadyFetched = {};
 
-  $.ajax({
-    url: '/json/static.json',
-    method: 'GET',
-    dataType: 'json',
-    success: onDataReceived
-  });
+    $.ajax({
+      url: '/json/static.json',
+      method: 'GET',
+      dataType: 'json',
+      success: onDataReceived
+    });
 
-  function onDataReceived(series) {
-    // extract the first coordinate pair so you can see that
-    // data is now an ordinary Javascript object
-    var firstcoordinate = '(' + series.data[0][0] + ', ' + series.data[0][1] + ')';
+    function onDataReceived(series) {
+      // extract the first coordinate pair so you can see that
+      // data is now an ordinary Javascript object
+      var firstcoordinate = '(' + series.data[0][0] + ', ' + series.data[0][1] + ')';
 
 
       // let's add it to our current data
@@ -118,7 +118,7 @@ $(document).ready(function() {
         success: onDataFetch
       });
 
-      setTimeout(fetchData, 1000);
+      setTimeout(fetchData, 60000);
     }
   });
-  </script>
+</script>
