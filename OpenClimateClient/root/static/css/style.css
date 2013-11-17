@@ -211,3 +211,9 @@ background-color: #f4fff2;
 border-color: #87fc70;
 color: #87fc70;
 }
+
+.btn-group-lg > .btn {
+	padding: 14px 26px;
+	font-size: 21px;
+	line-height: 1.33;
+}
