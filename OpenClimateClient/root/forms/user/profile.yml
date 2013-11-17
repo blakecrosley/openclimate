@@ -102,7 +102,7 @@ elements:
     - type: Submit
       name: update
       id: update
-      value: Update
+      value: Update Account
       attributes:
         class: btn btn-oc btn-lg
 
