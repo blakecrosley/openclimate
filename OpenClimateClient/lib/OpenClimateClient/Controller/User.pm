@@ -81,13 +81,16 @@ sub profile :Local :FormConfig('user/profile.yml') :Args(0) {
   });
   
   if ($form->submitted_and_valid){
+    warn "Submitted and valid";
     my $params = $form->params;
     delete $params->{_token};
     delete $params->{old_password};
     delete $params->{password_confirmation};
-    $c->user->_user->update($params);
-    $c->stash({ status_msg => 'Profile Updated' });
-    $c->res->redirect($c->uri_for($self->action()));
+    delete $params->{update};
+    
+    $c->user->update({%$params});
+    $c->session({ status_msg => 'Profile Updated' });
+    $c->res->redirect($c->uri_for($c->action()));
   }
   
   $c->stash({
