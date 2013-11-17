@@ -71,6 +71,7 @@ sub save_POST {
 
     $self->status_created(
       $c,
+      location => $c->req->uri,
       entity => {
         message => "Temperature saved."
       }
