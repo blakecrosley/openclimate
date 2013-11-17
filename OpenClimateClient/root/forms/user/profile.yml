@@ -57,7 +57,7 @@ elements:
 
     - type: Block
       attributes:
-        class: mb30
+        class: mb15
       elements:
       - type: Password
         name: old_password
@@ -69,7 +69,7 @@ elements:
 
     - type: Block
       attributes:
-        class: mb30
+        class: mb15
       elements:
       - type: Password
         name: password
