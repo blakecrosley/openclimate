@@ -1,0 +1,111 @@
+indicator: update
+method: POST
+attributes:
+  class: form-horizontal
+  role: form
+
+elements:
+  - type: Block
+    attributes:
+      class: form-group
+    elements:
+    - type: Block
+      attributes:
+        class: mb15
+      elements:
+      - type: Text
+        name: first_name
+        id: first_name
+        attributes:
+          placeholder: First Name
+          class: mb0 form-control
+
+    - type: Block
+      attributes:
+        class: mb15
+      elements:
+      - type: Text
+        name: last_name
+        id: last_name
+        attributes:
+          placeholder: Last Name
+          class: mb0 form-control
+
+    - type: Block
+      attributes:
+        class: mb15
+      elements:
+      - type: Text
+        name: email_address
+        id: email_address
+        attributes:
+          placeholder: Email
+          class: mb0 form-control
+
+    - type: Block
+      attributes:
+        class: mb15
+      elements:
+      - type: Text
+        name: username
+        id: username
+        attributes:
+          placeholder: Username
+          class: mb0 form-control
+
+    - type: Hr
+
+    - type: Block
+      attributes:
+        class: mb30
+      elements:
+      - type: Password
+        name: old_password
+        id: old_password
+        attributes:
+          autocomplete: off
+          placeholder: Old Password
+          class: mb0 form-control
+
+    - type: Block
+      attributes:
+        class: mb30
+      elements:
+      - type: Password
+        name: password
+        id: password
+        attributes:
+          autocomplete: off
+          placeholder: Password
+          class: mb0 form-control
+
+    - type: Block
+      attributes:
+        class: mb30
+      elements:
+      - type: Password
+        name: password_confirmation
+        id: password_confirmation
+        attributes:
+          autocomplete: off
+          placeholder: Password Confirmation
+          class: mb0 form-control
+
+    - type: Submit
+      name: update
+      id: update
+      value: Update
+      attributes:
+        class: btn btn-oc btn-lg
+
+# Global filters and constraints.
+constraints:
+    # The user cannot leave any fields blank
+    - Required
+    # If not all fields are required, move the Required constraint to the
+    # fields that are
+filter:
+    # Remove whitespace at both ends
+    - TrimEdges
+    # Escape HTML characters for safety
+    - HTMLEscape

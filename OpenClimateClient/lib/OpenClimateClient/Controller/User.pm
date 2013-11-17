@@ -63,6 +63,31 @@ sub create :Local :FormConfig('user/create.yml') :Args(0) {
   });
 }
 
+=head2 profile
+
+=cut
+
+sub profile :Local :FormConfig('user/profile.yml') :Args(0) {
+  my ( $self, $c ) = @_;
+  my $form = $c->stash->{form};
+
+  $c->forward('/auth/auth_required');
+
+  $form->default_values({
+    first_name      => $c->user->first_name,
+    last_name       => $c->user->last_name,
+    username        => $c->user->username,
+    email_address   => $c->user->email_address,
+  });
+  
+  if ($form->submitted_and_valid){
+  
+  }
+  
+  $c->stash({
+    template => 'user/profile.html',
+  });
+}
 
 
 =encoding utf8
