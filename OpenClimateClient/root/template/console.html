@@ -19,7 +19,7 @@
           <div class="col-md-12">
           <h1>Set Temperature</h1>
             <div id="slider-vertical" class="w40 fl" style="height: 200px;"></div>
-            <input type="text" id="amount" value="°" class="fl ml30 w60pPhone font90Phone" />
+            <input type="text" id="amount" readonly="readonly" value="°" class="fl pl20 w80pPhone font70" />
           </div>
         </div>
         <div class="row">
@@ -58,6 +58,6 @@
         $("#amount").val( ui.value + '°')
       }
     });
-    $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
+    $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) + '°' );
   });
   </script>
