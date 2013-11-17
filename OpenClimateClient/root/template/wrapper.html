@@ -10,7 +10,7 @@
 [% ############## END Meta Information ############## -%]
 [% ############## Title / Favicon ############## -%]
 <link rel="shortcut icon" href="favicon.png">
-<title>[% template.title or "My Catalyst App!" %]</title>
+<title>[% IF template.title %][% template.title %] | [% END %]OpenClimate</title>
 [% ############## END Title / Favicon ############## -%]
 [% ############## CSS ############## -%]
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
