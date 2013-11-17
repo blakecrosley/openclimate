@@ -2,6 +2,7 @@ package OpenClimateClient::Controller::Temperature;
 
 use namespace::autoclean;
 
+use DateTime;
 use Moose;
 use Try::Tiny;
 
@@ -29,24 +30,20 @@ sub get : Path('get') : Args(0) :ActionClass('REST') {}
 sub get_GET {
   my ( $self, $c ) = @_;
 
-  for ( my $count = 0; $count < 24; $count ++) {
+  my $now = DateTime->now( time_zone => 'America/Los_Angeles' );
 
-  }
+  my $right_now = $now->second;
 
   my @values;
 
-    my $x = int(rand(36-10) + 10);
+  my $dummy_temp = 60;
 
-    my $y = int(rand(24-1) + 1);
-  for (my $cnt = 0; $cnt < 24; $cnt++){
-    my $x_offset = int(rand(1-4));
-    my $y_offset = int(rand(1-4));
+  my $x = 0;
+  my $y = 0;
 
-    my $is_going_down = $y_offset % 2;
-
-    $x += $x_offset;
-    $y += $is_going_down ? $y_offset : - $y_offset;
-    push @values, [$x,$y];
+  for ( my $count = 61; $count > 0; $count --) {
+    $x = $count;
+    push @values, [$x,65];
   }
 
   $self->status_ok(
