@@ -159,3 +159,32 @@ outline: 0 none;
   color: #fff !important;
   background-color: #007aff !important;
 }
+
+
+
+
+
+.ui-widget-header {
+	background: #007aff;
+	border-radius: 2px;
+}
+
+.ui-widget-content {
+	border: 0px solid #fff;
+	border-radius: 2px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+border: 0px solid #fff;
+background: #007aff;
+width:100%;
+border-radius: 2px;
+}
+
+.ui-slider-vertical .ui-slider-handle {
+left: 0;
+}
+
+.ui-slider .ui-slider-handle {
+height: 1.5em;
+}

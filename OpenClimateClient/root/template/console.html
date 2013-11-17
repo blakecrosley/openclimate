@@ -8,8 +8,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
-            <input type="text" class="w80p" value="" data-slider-min="-20" data-slider-max="20" data-slider-step="1" data-slider-value="-14" data-slider-orientation="vertical" data-slider-selection="after"data-slider-tooltip="hide">
+          <div class="col-md-12 h300">
+            <div id="slider-vertical" class="w40" style="height: 200px;"></div>           
           </div>
         </div>
         <div class="row">
@@ -36,3 +36,22 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+
+   <script>
+  $(function() {
+    $( "#slider-vertical" ).slider({
+      orientation: "vertical",
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 60,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.value );
+      }
+    });
+    $( "#amount" ).val( $( "#slider-vertical" ).slider( "value" ) );
+  });
+  </script>
+>>>>>>> 376701f6a64c83c5b221ffb6d148e6f3812701d5
